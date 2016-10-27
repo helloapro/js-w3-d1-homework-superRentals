@@ -3,7 +3,7 @@
 We hope you find exactly what you're looking for in a place to stay.
 
 <ul>
-  {{#each rentals as |rental|}}
+  {{#each model.rentals as |rental|}}
     {{rental-tile rental=rental update="update" destroyRental="destroyRental"}}
   {{/each}}
 </ul>
@@ -13,13 +13,22 @@ We hope you find exactly what you're looking for in a place to stay.
 {{announcement-list}}
 
 <ul>
-  {{#each announcements as |announcement|}}
+  {{#each model.announcements as |announcement|}}
     {{announcement.message}}<br>
     {{announcement.supervisor}}<br>
     {{announcement.weather}}<br>
   {{/each}}
 </ul>
 
+All Reviews
+
+<ul>
+  {{#each model.reviews as |review|}}
+    <li>{{review.author}}<br>
+    {{review.rating}}<br>
+    {{review.content}}<br></li>
+  {{/each}}
+</ul>
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
